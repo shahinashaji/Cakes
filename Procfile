@@ -1,1 +1,1 @@
-web: gunicorn Cakes.wsgi --log-file -
+web: gunicorn cakes.wsgi --log-file -
