@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Cake Template">
+    <meta name="keywords" content="Cake, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cake | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/barfiller.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %]" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Offcanvas Menu Begin -->
+<div class="offcanvas-menu-overlay"></div>
+
+<!-- Offcanvas Menu End -->
+
+<!-- Header Section Begin -->
+{% include 'header.html' %}
+<!-- Header Section End -->
+
+<!-- Hero Section Begin -->
+<section class="hero">
+    <div class="hero__slider owl-carousel">
+        <div class="hero__item set-bg" data-setbg="{% static 'img/hero/hero-1.jpg' %}">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="hero__text">
+                            <h2>Making your life sweeter one bite at a time!</h2>
+                            <a href="#" class="primary-btn">Delicious Cakes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero__item set-bg" data-setbg="{% static 'img/hero/hero-1.jpg' %}">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="hero__text">
+                            <h2>Making your life sweeter one bite at a time!</h2>
+                            <a href="#" class="primary-btn">Delicious Cakes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+<!-- About Section Begin -->
+
+<!-- About Section End -->
+
+<!-- Categories Section Begin -->
+<div class="categories">
+    <div class="container">
+        <div class="row">
+            <div class="categories__slider owl-carousel">
+                <div class="categories__item">
+                    <div class="categories__item__icon">
+                        <span class="flaticon-029-cupcake-3"></span>
+                        <h5>Cupcake</h5>
+                    </div>
+                </div>
+                <div class="categories__item">
+                    <div class="categories__item__icon">
+                        <span class="flaticon-034-chocolate-roll"></span>
+                        <h5>Butter</h5>
+                    </div>
+                </div>
+                <div class="categories__item">
+                    <div class="categories__item__icon">
+                        <span class="flaticon-005-pancake"></span>
+                        <h5>Red Velvet</h5>
+                    </div>
+                </div>
+                <div class="categories__item">
+                    <div class="categories__item__icon">
+                        <span class="flaticon-030-cupcake-2"></span>
+                        <h5>Biscuit</h5>
+                    </div>
+                </div>
+                <div class="categories__item">
+                    <div class="categories__item__icon">
+                        <span class="flaticon-006-macarons"></span>
+                        <h5>Donut</h5>
+                    </div>
+                </div>
+                <div class="categories__item">
+                    <div class="categories__item__icon">
+                        <span class="flaticon-006-macarons"></span>
+                        <h5>Cupcake</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Categories Section End -->
+
+<!-- Product Section Begin -->
+<section class="product spad">
+    <div class="container">
+        <div class="row">
+            {% for cake in cakes %}
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" data-setbg="{{cake.image.url}}">
+                        <div class="product__label">
+                            <!--                                <span>Cupcake</span><img src="{{event.image.url}}" alt="">-->
+                        </div>
+                    </div>
+                    <div class="product__item__text">
+                        <h6><a href="#">{{cake.name}}</a></h6>
+                        <div class="product__item__price"><i class="fa fa-inr" aria-hidden="true"></i>{{cake.price}}
+                        </div>
+                        <div class="cart_add">
+                            <a href="#">{{cake.category}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- Product Section End -->
+
+<!-- Footer Section Begin -->
+{% include 'footer.html' %}
+<!-- Footer Section End -->
+
+
+<!-- Js Plugins -->
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'js/jquery.barfiller.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.slicknav.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
